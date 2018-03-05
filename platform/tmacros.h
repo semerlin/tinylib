@@ -1,7 +1,7 @@
 /**
  * This file is part of the tlog Library.
  *
- * Copyright 2017, Huang Yang <elious.huang@gmail.com>. All rights reserved.
+ * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
  * See the COPYING file for the terms of usage and distribution.
  */
@@ -59,13 +59,13 @@
 
 /* handling structure */
 #define T_OFFSET_OF(struct_type, member)    \
-    ((unsigned long)&((struct_type *)0)->member)
+    ((tbasetype)&((struct_type *)0)->member)
 
 /* get struct address */
-#define T_CONTAINER_OF(member_ptr, struct_type, member)                     \
-    ({                                                                      \
-         const typeof(((struct_type *)0)->member) *__mptr = (member_ptr);   \
-         (struct_type *)((char *)__mptr - T_OFFSET_OF(struct_type, member));       \
+#define T_CONTAINER_OF(member_ptr, struct_type, member)                        \
+    ({                                                                         \
+         const typeof(((struct_type *)0)->member) *__mptr = (member_ptr);      \
+         (struct_type *)((char *)__mptr - T_OFFSET_OF(struct_type, member));   \
      })
 
 /* likely and unlikely */
