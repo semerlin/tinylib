@@ -1,0 +1,9 @@
+libdir=@CMAKE_INSTALL_PREFIX@/lib
+includedir=@CMAKE_INSTALL_PREFIX@/include
+
+Name: tinylib
+Description: tinylib library
+Version: @VERSION_MAJOR@.@VERSION_MINOR@.@REVISION_NUMBER@.@BUILD_NUMBER@
+URL: https://github.com/semerlin/tinylib
+Libs: -L${libdir} -ltinylib @CMAKE_THREAD_LIBS_INIT@
+Cflags: -I${includedir}

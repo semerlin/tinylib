@@ -1,7 +1,7 @@
 /**
  * This file is part of the tlog Library.
  *
- * Copyright 2017, Huang Yang <elious.huang@gmail.com>. All rights reserved.
+ * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
  * See the COPYING file for the terms of usage and distribution.
  */
@@ -12,18 +12,6 @@
 #include "tsysdeps.h"
 
 /****************************************************
- * macros definition
- ****************************************************/
-
-/****************************************************
- * struct definition
- ****************************************************/
-
-/****************************************************
- * static variable 
- ****************************************************/
-
-/****************************************************
  * functions 
  ****************************************************/
 /**
@@ -32,7 +20,7 @@
  */
 void t_exit(tint code)
 {
-    /* use exit() instead _exit() if you want to flush I/O buffer)*/
+    /* use exit() instead _exit() if you want to flush I/O buffer */
     _exit(code);
 }
 
@@ -68,7 +56,7 @@ void t_abort (void)
     t_print_backtrace();
 
     abort();
-    /* in case someone manages to ignore SIGABRT ? */
+    /* in case someone manages to ignore SIGABRT? */
     t_exit (1);
 }
 

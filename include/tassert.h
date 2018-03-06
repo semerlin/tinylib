@@ -1,5 +1,5 @@
 /**
- * This file is part of the tlog Library.
+ * This file is part of the tinylib Library.
  *
  * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
