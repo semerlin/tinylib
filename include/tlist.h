@@ -31,7 +31,7 @@ T_EXTERN tbool t_list_is_empty(const tlist *head);
 T_EXTERN tbool t_list_is_last(const tlist *head, const tlist *node);
 T_EXTERN tbool t_list_is_first(const tlist *head, const tlist *node);
 T_EXTERN tuint32 t_list_length(const tlist *head);
-T_EXTERN void t_list_free(tlist *head, generic_func free_func);
+T_EXTERN void t_list_free(tlist *head, tgeneric_func free_func);
 
 /**
  * @brief list

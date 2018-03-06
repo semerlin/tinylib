@@ -27,6 +27,12 @@ if (GTEST_FOUND)
                                ${COMMON_SRC_LIST})
     target_link_libraries(test_tlist ${LIB_LIST})
 
+    #test tslist
+    add_executable(test_tslist test_tslist.cpp 
+                              ../container/list/tslist.c
+                               ${COMMON_SRC_LIST})
+    target_link_libraries(test_tslist ${LIB_LIST})
+
 
 
 endif (GTEST_FOUND)

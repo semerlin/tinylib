@@ -106,7 +106,7 @@ tbool t_list_is_last(const tlist *head, const tlist *node)
 {
     T_ASSERT(NULL != head);
 
-    return (head->prev == node);
+    return ((head->prev == node) && (NULL != node));
 }
 
 
@@ -121,7 +121,7 @@ tbool t_list_is_first(const tlist *head, const tlist *node)
 {
     T_ASSERT(NULL != head);
 
-    return (head->next == node);
+    return ((head->next == node) && (NULL != node));
 }
 
 /**
@@ -148,7 +148,7 @@ tuint32 t_list_length(const tlist *head)
  * @param head - list head
  * @param free_func - resource free function
  */
-void t_list_free(tlist *head, generic_func free_func)
+void t_list_free(tlist *head, tgeneric_func free_func)
 {
     T_ASSERT(NULL != head);
 

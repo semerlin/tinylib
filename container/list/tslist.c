@@ -1,5 +1,5 @@
 /**
- * This file is part of the tlog Library.
+ * This file is part of the tinylib library.
  *
  * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
@@ -8,18 +8,6 @@
 #include "tslist.h"
 #include "tassert.h"
 
-
-/****************************************************
- * macros definition
- ****************************************************/
-
-/****************************************************
- * struct definition
- ****************************************************/
-
-/****************************************************
- * static variable 
- ****************************************************/
 
 /****************************************************
  * functions 
@@ -31,6 +19,7 @@
 void t_slist_init_head(tslist *head)
 {
     T_ASSERT(NULL != head);
+
     head->next = head;
 }
 
@@ -41,6 +30,7 @@ void t_slist_init_head(tslist *head)
 void t_slist_init_node(tslist *node)
 {
     T_ASSERT(NULL != node);
+
     node->next = NULL;
 }
 
@@ -121,7 +111,7 @@ tbool t_slist_is_last(const tslist *head, const tslist *node)
 {
     T_ASSERT(NULL != head);
 
-    return (node->next == head);
+    return ((node->next == head) && (NULL != node));
 }
 
 
@@ -136,7 +126,7 @@ tbool t_slist_is_first(const tslist *head, const tslist *node)
 {
     T_ASSERT(NULL != head);
 
-    return (head->next == node);
+    return ((head->next == node) && (NULL != node));
 }
 
 /**
@@ -164,7 +154,7 @@ tuint32 t_slist_length(const tslist *head)
  * @param head - list head
  * @param free_func - resource free function
  */
-void t_slist_free(tslist *head, tfree_func free_func)
+void t_slist_free(tslist *head, tgeneric_func free_func)
 {
     T_ASSERT(NULL != head);
 
