@@ -1,26 +1,12 @@
 /**
- * This file is part of the tlog Library.
+ * This file is part of the tinylib Library.
  *
- * Copyright 2017, Huang Yang <elious.huang@gmail.com>. All rights reserved.
+ * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
  * See the COPYING file for the terms of usage and distribution.
  */
 #include "tlist.h"
 #include "tassert.h"
-
-
-
-/****************************************************
- * macros definition
- ****************************************************/
-
-/****************************************************
- * struct definition
- ****************************************************/
-
-/****************************************************
- * static variable 
- ****************************************************/
 
 /****************************************************
  * functions 
@@ -32,6 +18,7 @@
 void t_list_init_head(tlist *head)
 {
     T_ASSERT(NULL != head);
+
     head->prev = head;
     head->next = head;
 }
@@ -43,6 +30,7 @@ void t_list_init_head(tlist *head)
 void t_list_init_node(tlist *node)
 {
     T_ASSERT(NULL != node);
+
     node->prev = NULL;
     node->next = NULL;
 }
@@ -160,7 +148,7 @@ tuint32 t_list_length(const tlist *head)
  * @param head - list head
  * @param free_func - resource free function
  */
-void t_list_free(tlist *head, tfree_func free_func)
+void t_list_free(tlist *head, generic_func free_func)
 {
     T_ASSERT(NULL != head);
 
@@ -169,6 +157,10 @@ void t_list_free(tlist *head, tfree_func free_func)
     while (cur != head)
     {
         temp = cur->next;
+        cur->prev->next = cur->next;
+        cur->next->prev = cur->prev;
+        cur->next = NULL;
+        cur->prev = NULL;
         if (NULL != free_func)
         {
             free_func(cur);

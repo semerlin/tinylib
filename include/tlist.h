@@ -1,7 +1,7 @@
 /**
- * This file is part of the tlog Library.
+ * This file is part of the tinylib Library.
  *
- * Copyright 2017, Huang Yang <elious.huang@gmail.com>. All rights reserved.
+ * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
  * See the COPYING file for the terms of usage and distribution.
  */
@@ -31,16 +31,7 @@ T_EXTERN tbool t_list_is_empty(const tlist *head);
 T_EXTERN tbool t_list_is_last(const tlist *head, const tlist *node);
 T_EXTERN tbool t_list_is_first(const tlist *head, const tlist *node);
 T_EXTERN tuint32 t_list_length(const tlist *head);
-T_EXTERN void t_list_free(tlist *head, tfree_func free_func);
-
-/**
- * @brief get list node entry
- * @param member_ptr - node pointer
- * @param struct_type - entry struct type
- * @param member - node name
- */
-#define t_list_entry(member_ptr, struct_type, member) \
-        T_CONTAINER_OF(member_ptr, struct_type, member)
+T_EXTERN void t_list_free(tlist *head, generic_func free_func);
 
 /**
  * @brief list

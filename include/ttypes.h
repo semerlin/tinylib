@@ -48,6 +48,9 @@ typedef double  tdouble;
 
 #define UNUSED(x)   ((void)(x))
 
+/* generic function */
+typedef void (*generic_func)(void *args);
+
 T_END_DECLS
 
 #endif /* TTYPES_H_ */

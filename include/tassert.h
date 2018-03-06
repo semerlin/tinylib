@@ -5,8 +5,8 @@
  *
  * See the COPYING file for the terms of usage and distribution.
  */
-#ifndef TASSERT_H_
-#define TASSERT_H_
+#ifndef _TASSERT_H_
+#define _TASSERT_H_
 
 #include "ttypes.h"
 

@@ -5,8 +5,8 @@
  *
  * See the COPYING file for the terms of usage and distribution.
  */
-#ifndef TLOG_CONFIG_H_
-#define TLOG_CONFIG_H_
+#ifndef _TCONFIG_H_
+#define _TCONFIG_H_
 
 /* linux32 type definition */
 typedef unsigned char tuint8;

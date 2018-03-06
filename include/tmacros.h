@@ -5,8 +5,8 @@
  *
  * See the COPYING file for the terms of usage and distribution.
  */
-#ifndef TMACROS_H_
-#define TMACROS_H_
+#ifndef _TMACROS_H_
+#define _TMACROS_H_
 
 #include "tconfig.h"
 
