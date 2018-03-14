@@ -1,12 +1,12 @@
 /**
- * This file is part of the tinylib Library.
+ * This file is part of the tinylib library.
  *
  * Copyright 2017-2018, Huang Yang <elious.huang@gmail.com>. All rights reserved.
  *
  * See the COPYING file for the terms of usage and distribution.
  */
-#ifndef TTYPES_H_
-#define TTYPES_H_
+#ifndef _TTYPES_H_
+#define _TTYPES_H_
 
 #include "tconfig.h"
 #include "tmacros.h"
@@ -42,7 +42,7 @@ typedef double  tdouble;
 #ifdef __cplusplus
     #define NULL    (0L)
 #else
-    #define NULL    ((void*)0)
+    #define NULL    ((void *)0)
 #endif
 #endif
 
@@ -53,4 +53,5 @@ typedef void (*tgeneric_func)(void *args);
 
 T_END_DECLS
 
-#endif /* TTYPES_H_ */
+#endif /* _TTYPES_H_ */
+
