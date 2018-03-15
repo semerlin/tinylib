@@ -46,6 +46,14 @@ if (GTEST_FOUND)
                                ${COMMON_SRC_LIST})
     target_link_libraries(test_thash_string ${LIB_LIST})
 
+    #test tqsort
+    add_executable(test_tqsort test_tqsort.cpp 
+                              ../algorithm/sort/tqsort.c
+                               ${COMMON_SRC_LIST})
+    target_link_libraries(test_tqsort ${LIB_LIST})
+
+
+
 
 endif (GTEST_FOUND)
 
