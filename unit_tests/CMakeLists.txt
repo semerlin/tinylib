@@ -52,6 +52,22 @@ if (GTEST_FOUND)
                                ${COMMON_SRC_LIST})
     target_link_libraries(test_tqsort ${LIB_LIST})
 
+    #test tstring
+    add_executable(test_tstring test_tstring.cpp 
+                              ../string/tstring.c
+                               ${COMMON_SRC_LIST})
+    target_link_libraries(test_tstring ${LIB_LIST})
+
+
+    #test tkeyfile
+    add_executable(test_tkeyfile test_tkeyfile.cpp 
+                                ../container/hash/thlist.c
+                                ../container/list/tlist.c
+                                ../string/tstring.c
+                                ../container/hash/thash_string.c
+                                ../serialization/tkeyfile.c
+                                ${COMMON_SRC_LIST})
+    target_link_libraries(test_tkeyfile ${LIB_LIST})
 
 
 

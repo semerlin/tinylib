@@ -330,11 +330,11 @@ void t_hash_string_keys(const thash_string *hash_string, tchar **keys)
  * @param hash_func - hash callback function
  * @return error code, 0 means no error happend
  */
-tint t_hash_string_foreach(const thash_string *hash_string, thash_func hash_func, void *userdata)
+void t_hash_string_foreach(const thash_string *hash_string, thash_func hash_func, void *userdata)
 {
     if (NULL == hash_string)
     {
-        return 0;
+        return ;
     }
 
     thlist_node *hlist_node = NULL;
@@ -351,8 +351,6 @@ tint t_hash_string_foreach(const thash_string *hash_string, thash_func hash_func
             }
         }
     }
-
-    return 0;
 }
 
 /**
