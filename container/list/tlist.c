@@ -73,7 +73,11 @@ void t_list_append(tlist *head, tlist *node)
  */
 void t_list_remove(tlist *node)
 {
-    T_ASSERT(NULL != node);
+    if (NULL == node)
+    {
+        return ;
+    }
+
     T_ASSERT(NULL != node->prev);
     T_ASSERT(NULL != node->next);
 
