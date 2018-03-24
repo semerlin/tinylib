@@ -69,6 +69,12 @@ if (GTEST_FOUND)
                                 ${COMMON_SRC_LIST})
     target_link_libraries(test_tkeyfile ${LIB_LIST})
 
+    #test tqueue
+    add_executable(test_tqueue test_tqueue.cpp 
+                              ../container/list/tlist.c
+                              ../container/queue/tqueue.c
+                               ${COMMON_SRC_LIST})
+    target_link_libraries(test_tqueue ${LIB_LIST})
 
 
 endif (GTEST_FOUND)
