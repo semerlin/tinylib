@@ -76,6 +76,13 @@ if (GTEST_FOUND)
                                ${COMMON_SRC_LIST})
     target_link_libraries(test_tqueue ${LIB_LIST})
 
+    #test tstack
+    add_executable(test_tstack test_tstack.cpp 
+                              ../container/list/tlist.c
+                              ../container/stack/tstack.c
+                               ${COMMON_SRC_LIST})
+    target_link_libraries(test_tstack ${LIB_LIST})
+
 
 endif (GTEST_FOUND)
 
