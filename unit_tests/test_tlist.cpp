@@ -22,7 +22,6 @@ TEST(TlistTest, Death)
     EXPECT_DEATH(t_list_prepend(&head, NULL), "");
     EXPECT_DEATH(t_list_append(&head, NULL), "");
     EXPECT_DEATH(t_list_append(NULL, &node), "");
-    EXPECT_DEATH(t_list_remove(NULL), "");
     EXPECT_DEATH(t_list_is_empty(NULL), "");
     EXPECT_DEATH(t_list_is_last(NULL, &node), "");
     EXPECT_DEATH(t_list_is_first(NULL, &node), "");
