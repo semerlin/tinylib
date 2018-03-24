@@ -11,22 +11,17 @@
 /****************************************************
  * functions 
  ****************************************************/
+/**
+ * @brief pop node frome queue
+ * @param head - queue head
+ * @return popped node
+ */
 tqueue *t_queue_pop(tqueue *head)
 {
     T_ASSERT(NULL != head);
     tqueue *ret = head->next;
-    if (NULL == ret)
-    {
-        return NULL;
-    }
-    else
-    {
-        ret->next->prev = head;
-        head->next = ret->next;
-        ret->prev = NULL;
-        ret->next = NULL;
-        return ret;
-    }
+    t_list_remove(head->next);
+    return ret;
 }
 
 
